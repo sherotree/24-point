@@ -6,7 +6,7 @@ import {
   calculate,
   shareAppMessage,
 } from '../../utils/index.js';
-import { post } from '../../api/index';
+
 import { OPERATORS, OPERATORS_HASH } from '../../constants/index.js';
 import { RULE } from '../../constants/index.js';
 const cardsAndRecommendSolution = generateCardsAndRecommendSolution();
@@ -108,13 +108,6 @@ Page({
 
     if (isFinish && openid) {
       const isCorrect = nextState.selectedCard.value === 24;
-      post('increaseAnswersCount', { openid, isCorrect });
-      post('24-points/add_question', {
-        openid,
-        isCorrect,
-        question: initialCards.map(x => x.value),
-        gameplay: 'TYPE_0',
-      });
     }
 
     if (isFinish && nextState.selectedCard.value === 24) {
