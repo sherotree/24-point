@@ -1,10 +1,7 @@
-const app = getApp();
-
 import {
   generateCardsAndRecommendSolution,
   noDecimal,
   calculate,
-  shareAppMessage,
 } from '../../utils/index.js';
 
 import { OPERATORS, OPERATORS_HASH } from '../../constants/index.js';
@@ -23,12 +20,6 @@ Page({
     isFinish: false,
   },
 
-  onShareAppMessage: shareAppMessage,
-
-  _goProfile: function() {
-    wx.navigateTo({ url: '/pages/index/index' });
-  },
-
   _showRule: function() {
     wx.showModal({
       showCancel: false,
@@ -44,15 +35,6 @@ Page({
 
     this.setData({
       selectedOperator: selectedOperator !== value ? value : null,
-    });
-  },
-
-  _showSolution: function() {
-    wx.showModal({
-      showCancel: false,
-      title: '推荐算法',
-      content: this.data.recommendSolution,
-      success: function(res) {},
     });
   },
 
@@ -104,11 +86,6 @@ Page({
 
     const isFinish =
       nextState.cards.filter(({ state }) => state === 'disable').length === 3;
-    const openid = app.globalData.openid;
-
-    if (isFinish && openid) {
-      const isCorrect = nextState.selectedCard.value === 24;
-    }
 
     if (isFinish && nextState.selectedCard.value === 24) {
       this._skip();
