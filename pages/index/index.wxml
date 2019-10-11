@@ -1,13 +1,23 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <view class='header'>
+    <button>规则</button>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class='numbers'>
+    <button> 1 </button>
+    <button> 2 </button>
+    <button> 3 </button>
+    <button> 4 </button>
   </view>
+  <view class='operators'>
+     <button>+</button>
+     <button>-</button>
+     <button>×</button>
+     <button>÷</button>
+  </view>
+  <view class='footer'>
+     <button>下一题</button>
+     <button>重置</button>
+  </view>
+
 </view>

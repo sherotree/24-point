@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+  },
   "navigationBarBackgroundColor": "#ffd700",
   "navigationBarTitleText": "试一试"
+  
 }

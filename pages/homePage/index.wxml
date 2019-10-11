@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+  <view class='header'>
+    <button bindtap="ruleTap">规则</button>
+  </view>
+  <!-- <view class='numbers'>
+    <button bindtap="ruleTap" id="{{num1}}"> {{num1}} </button>
+    <button bindtap="ruleTap" id="{{num2}}"> {{num2}} </button>
+    <button bindtap="ruleTap" id="{{num3}}"> {{num3}} </button>
+    <button bindtap="ruleTap" id="{{num4}}"> {{num4}} </button>
+  </view> -->
+
+  <view  class='numbers'>
+    <button wx:key="{{index}}" wx:for="{{nums}}" bindtap="ruleTap" id="{{item}}">{{item}}</button>
+  </view>
+
+  <view class='operators'>
+     <button>+</button>
+     <button>-</button>
+     <button>×</button>
+     <button>÷</button>
+  </view>
+  <view class='footer'>
+     <button>下一题</button>
+     <button>重置</button>
+  </view>
+
+</view>
